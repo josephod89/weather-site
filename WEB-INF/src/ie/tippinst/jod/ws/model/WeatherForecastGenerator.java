@@ -1,6 +1,9 @@
 package ie.tippinst.jod.ws.model;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
 
 
 public class WeatherForecastGenerator {
@@ -28,15 +31,23 @@ public class WeatherForecastGenerator {
 	}
 	
 	private Weather getDataFromExcel(){
-		Weather w = new Weather();
-		ReadExcel test = new ReadExcel();
-		test.setInputFile("C:\\Users\\Joseph\\Documents\\Lismore_2010.xls");
+		Weather weather = new Weather();
+		ReadExcel read = new ReadExcel();
 		try {
-			w.setTemperature(Double.parseDouble(test.read()));
+			//weather.setTemperature(Double.parseDouble(data.read("C:\\Users\\Joseph\\Documents\\Lismore_2010.xls", new Date())));
+			Collection<Weather> data = read.read("C:\\Users\\Joseph\\Documents\\Lismore_2010.xls", new Date());
+			Iterator<Weather> i = data.iterator();
+			double total = 0.0;
+			while(i.hasNext()){
+				Weather w = i.next();
+				total += w.getTemperature();
+			}
+			weather.setDate(new Date());
+			weather.setTemperature(total / data.size());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return w;
+		return weather;
 	}
 	
 	private Weather getMyData(){
