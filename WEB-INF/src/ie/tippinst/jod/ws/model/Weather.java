@@ -6,6 +6,7 @@ public class Weather {
 	
 	private Date date;
 	private double temperature;
+	private int windSpeed;
 	
 	public Weather() {
 		super();
@@ -15,11 +16,24 @@ public class Weather {
 		super();
 		this.temperature = temperature;
 	}
+	
+	public Weather(double temperature, int windSpeed) {
+		super();
+		this.temperature = temperature;
+		this.windSpeed = windSpeed;
+	}
 
 	public Weather(Date date, double temperature) {
 		super();
 		this.date = date;
 		this.temperature = temperature;
+	}
+	
+	public Weather(Date date, double temperature, int windSpeed) {
+		super();
+		this.date = date;
+		this.temperature = temperature;
+		this.windSpeed = windSpeed;
 	}
 
 	public double getTemperature() {
@@ -36,5 +50,13 @@ public class Weather {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public int getWindSpeed() {
+		return windSpeed;
+	}
+
+	public void setWindSpeed(int windSpeed) {
+		this.windSpeed = windSpeed;
 	}
 }
