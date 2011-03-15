@@ -13,7 +13,10 @@ import javax.servlet.http.HttpSession;
 public class GetForecast extends HttpServlet {
 	
 	WeatherForecastGenerator wfg;
-	Weather weather;
+	Weather overnightWeather;
+	Weather morningWeather;
+	Weather afternoonWeather;
+	Weather eveningWeather;
 	
 	public void init(){
 		wfg = new WeatherForecastGenerator();
@@ -22,10 +25,16 @@ public class GetForecast extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//get weather forecast
-		weather = wfg.getForecast();
+		overnightWeather = wfg.getForecast(0);
+		morningWeather = wfg.getForecast(1);
+		afternoonWeather = wfg.getForecast(2);
+		eveningWeather = wfg.getForecast(3);
 		//add weather object to session
 		HttpSession session = request.getSession();
-		session.setAttribute("weather", weather);
+		session.setAttribute("overnightWeather", overnightWeather);
+		session.setAttribute("morningWeather", morningWeather);
+		session.setAttribute("afternoonWeather", afternoonWeather);
+		session.setAttribute("eveningWeather", eveningWeather);
 		response.sendRedirect("./forecast.jsp");
 	}
 

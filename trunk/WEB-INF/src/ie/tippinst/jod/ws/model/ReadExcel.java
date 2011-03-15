@@ -18,7 +18,7 @@ import jxl.read.biff.BiffException;
 
 public class ReadExcel {
 
-	public Collection<Weather> read(String filename, Date date) throws IOException  {
+	public Collection<Weather> read(String filename, Date date, String startTime, String endTime) throws IOException  {
 		File inputWorkbook = new File(filename);
 		Workbook w = null;
 		Sheet sheet = null;
@@ -34,6 +34,7 @@ public class ReadExcel {
 			sheet = w.getSheet(0);
 			
 			DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+			boolean isValid = false;
 			
 			for (int i = 2; i < sheet.getRows(); i++) {
 				cell = sheet.getCell(0, i);
@@ -41,12 +42,24 @@ public class ReadExcel {
 				cal = new GregorianCalendar();
 				cal.setTime(d);
 				if(current.get(Calendar.DATE) == cal.get(Calendar.DATE) && current.get(Calendar.MONTH) == cal.get(Calendar.MONTH)){
-					cell = sheet.getCell(2, i);
-					Weather weather = new Weather();
-					weather.setDate(d);
-					weather.setTemperature(Double.parseDouble(cell.getContents()));
-					col.add(weather);
-					//break;
+					if(sheet.getCell(1, i).getContents().equals(startTime)){
+						isValid = true;
+					}
+					else if(sheet.getCell(1, i).getContents().equals(endTime)){
+						isValid = false;
+					}
+					if(isValid){
+						cell = sheet.getCell(2, i);
+						System.out.println(sheet.getCell(1, i).getContents());
+						Weather weather = new Weather();
+						weather.setDate(d);
+						weather.setTemperature(Double.parseDouble(cell.getContents()));
+						cell = sheet.getCell(7, i);
+						//System.out.println(cell.getContents());
+						weather.setWindSpeed(Integer.parseInt(cell.getContents()));
+						col.add(weather);
+						//break;
+					}
 				}
 			}
 		} catch (BiffException e) {

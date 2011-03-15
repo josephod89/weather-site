@@ -7,6 +7,30 @@ import javax.servlet.jsp.*;
 public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+		
+				
+		private String displayInfo(ie.tippinst.jod.ws.model.Weather weather){
+			int windSpeed = 0;
+			String strength = "";
+			switch(weather.getWindSpeed()){
+				case 0:		windSpeed = 1; strength = "Calm"; break;
+				case 1:		windSpeed = 3; strength = "Light air"; break;
+				case 2:		windSpeed = 7; strength = "Light breeze"; break;
+				case 3:		windSpeed = 12; strength = "Gentle breeze"; break;
+				case 4:		windSpeed = 17; strength = "Moderate breeze"; break;
+				case 5:		windSpeed = 24; strength = "Fresh breeze"; break;
+				case 6:		windSpeed = 30; strength = "Strong breeze"; break;
+				case 7:		windSpeed = 38; strength = "Moderate gale"; break;
+				case 8:		windSpeed = 46; strength = "Gale"; break;
+				case 9:		windSpeed = 54; strength = "Strong gale"; break;
+				case 10:	windSpeed = 63; strength = "Storm"; break;
+				case 11:	windSpeed = 72; strength = "Violent storm"; break;
+				case 12:	windSpeed = 81; strength = "Hurricane"; break;
+				default:	System.out.println("ERROR");
+			}
+			return "Temperature: " + (int)weather.getTemperature() + "°C " + "Wind speed: " + windSpeed + "mph (" + strength + ")";
+		}
+	
   private static java.util.Vector _jspx_dependants;
 
   public java.util.List getDependants() {
@@ -46,9 +70,37 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<h1>Weather Forecast</h1>\r\n");
       out.write("\t");
 
-		ie.tippinst.jod.ws.model.Weather weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("weather");
-		out.println(weather.getTemperature() + " Celsius");
+		ie.tippinst.jod.ws.model.Weather weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("overnightWeather");
+		out.println("Overnight: ");
+		out.println(displayInfo(weather));
 	
+      out.write("\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t");
+
+		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("morningWeather");
+		out.println("Morning: ");
+		out.println(displayInfo(weather));
+	
+      out.write("\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t");
+
+		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
+		out.println("Afternoon: ");
+		out.println(displayInfo(weather));
+	
+      out.write("\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t");
+
+		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("eveningWeather");
+		out.println("Evening: ");
+		out.println(displayInfo(weather));
+	
+      out.write("\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t");
       out.write("\r\n");
       out.write("\t</body>\r\n");
       out.write("</html>");
