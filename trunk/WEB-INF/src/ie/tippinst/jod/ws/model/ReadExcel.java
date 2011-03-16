@@ -50,7 +50,7 @@ public class ReadExcel {
 					}
 					if(isValid){
 						cell = sheet.getCell(2, i);
-						System.out.println(sheet.getCell(1, i).getContents());
+						//System.out.println(sheet.getCell(1, i).getContents());
 						Weather weather = new Weather();
 						weather.setDate(d);
 						weather.setTemperature(Double.parseDouble(cell.getContents()));
