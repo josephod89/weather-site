@@ -15,7 +15,7 @@ public class WeatherForecastGenerator {
 	}	
 	
 	public Weather getForecast(int period){
-		switch(period){
+		switch(2){
 			case 0:	this.weather = calculateForecast("00:30", "09:30");
 					break;
 			case 1:	this.weather = calculateForecast("09:30", "13:30");
