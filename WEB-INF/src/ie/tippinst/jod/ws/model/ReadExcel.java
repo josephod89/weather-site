@@ -42,6 +42,7 @@ public class ReadExcel {
 				cal = new GregorianCalendar();
 				cal.setTime(d);
 				if(current.get(Calendar.DATE) == cal.get(Calendar.DATE) && current.get(Calendar.MONTH) == cal.get(Calendar.MONTH)){
+					//System.out.println(sheet.getCell(1, i).getContents());
 					if(sheet.getCell(1, i).getContents().equals(startTime)){
 						isValid = true;
 					}
@@ -57,6 +58,10 @@ public class ReadExcel {
 						cell = sheet.getCell(7, i);
 						//System.out.println(cell.getContents());
 						weather.setWindSpeed(Integer.parseInt(cell.getContents()));
+						cell = sheet.getCell(17, i);
+						weather.setRainFall(Double.parseDouble(cell.getContents()));
+						cell = sheet.getCell(16, i);
+						weather.setPressure(Double.parseDouble(cell.getContents()));
 						col.add(weather);
 						//break;
 					}
