@@ -42,12 +42,77 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("\t<head>\r\n");
       out.write("\t\t<title>Weather Site</title>\r\n");
+      out.write("\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"design.css\" />\r\n");
       out.write("\t</head>\r\n");
+      out.write("\t<body>\r\n");
+      out.write("\t\t<div class=\"logo\">\r\n");
+      out.write("\t\t\t<!--<a href =\"home.html\"><img src=\"../images/logo.png\" alt=\"Logo\" /></a>-->\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<div class=\"menu\">\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"./index.jsp\">Home</a>\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"about.html\">Current Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"./getForecast\">Forecast</a>\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"contact.html\">Subscribe</a>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<div class=\"bl\">\r\n");
+      out.write("\t\t\t<div class=\"br\">\r\n");
+      out.write("\t\t\t\t<div class=\"tl\">\r\n");
+      out.write("\t\t\t\t\t<div class=\"tr\">\r\n");
+      out.write("\t\t\t\t\t\t<table cellpadding=\"15\">\r\n");
+      out.write("\t\t\t\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<td>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<h3>Today</h3>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<p class=\"main_text\">\r\n");
       out.write("\t");
 
-		response.sendRedirect("./getForecast");
+		ie.tippinst.jod.ws.model.Weather weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("overnightWeather");
+		out.println("Overnight: ");
+		out.println(weather);
 	
       out.write("\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t");
+
+		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("morningWeather");
+		out.println("Morning: ");
+		out.println(weather);
+	
+      out.write("\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t");
+
+		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
+		out.println("Afternoon: ");
+		out.println(weather);
+	
+      out.write("\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t");
+
+		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("eveningWeather");
+		out.println("Evening: ");
+		out.println(weather);
+	
+      out.write("\r\n");
+      out.write("\t<br /></p>\r\n");
+      out.write("\t\t\t\t\t\t\t\t</td>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<td>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<img src=\"images/8615314-sun.jpg\" alt=\"A screenshot\" width=\"350\" height=\"200\" />\r\n");
+      out.write("\t\t\t\t\t\t\t\t</td>\r\n");
+      out.write("\t\t\t\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t\t\t</table>\r\n");
+      out.write("\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t</div>\r\n");
+      out.write("\t\t\t</div>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<div class=\"bottom_links\">\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"home.html\">Home</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"about.html\">About</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"contact.html\">Contact</a>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<div class=\"bottom_message\">\r\n");
+      out.write("\t\t\t<p class=\"bottom\">Weather Forecasting by Joseph O'Donoghue</p>\r\n");
+      out.write("\t\t</div>\r\n");
       out.write("\t</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

@@ -3,12 +3,15 @@ import ie.tippinst.jod.ws.model.Weather;
 import ie.tippinst.jod.ws.model.WeatherForecastGenerator;
 
 import java.io.IOException;
+import java.io.PrintStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import sun.net.smtp.SmtpClient;
 
 public class GetForecast extends HttpServlet {
 	
@@ -24,6 +27,7 @@ public class GetForecast extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		//get weather forecast
 		overnightWeather = wfg.getForecast(0);
 		morningWeather = wfg.getForecast(1);

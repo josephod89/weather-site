@@ -1,6 +1,6 @@
 body
 {
-background-image: url(images/Website_background_2.jpg);
+background-image: url('website_background_2.jpg');
 }
 
 div.logo{
@@ -9,11 +9,11 @@ padding-top: 3em;
 }
 
 div.menu{
-padding-left: 40em;
+padding-left: 30em;
 position: absolute;
 top: 6em;
 height: 50px;
-width: 400px;
+width: 550px;
 }
 
 div.bl{
@@ -35,7 +35,7 @@ top: 12em;
 left: 13em;
 right: 32em;
 color: white;
-font-family: "Sans";
+font-family: "Verdana";
 height: 550px;
 width: 800px;
 }
@@ -154,16 +154,16 @@ width: 220px;
 }
 
 p.main_text{
-font-size: 0.7em;
+font-size: 0.85em;
 }
 
 p.main_text_highlighted{
-font-size: 0.7em;
+font-size: 0.85em;
 color: #bef3ff;
 }
 
 a.bottom{
-font-size:0.6em;
+font-size:0.65em;
 color: green;
 font-family: "Verdana";
 margin-right: 3px;
@@ -171,7 +171,7 @@ font-variant: small-caps;
 }
 
 p.bottom{
-font-size:0.6em;
+font-size:0.65em;
 color: green;
 font-family: "Verdana";
 font-variant: small-caps;
