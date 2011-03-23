@@ -151,6 +151,6 @@ public class Weather {
 		}
 		
 		//return "Temperature: " + (int)this.getTemperature() + "°C " + "Wind speed: " + windSpeed + "mph (" + strength + ")" + " Rain: " + this.getRainFall() + " Pressure: " + this.getPressure();
-		return "It will be " + temp + " with an average temperature of " + (int)this.getTemperature() + "°C.  It will also be " + rain + " with a " + wind + ".";
+		return "t will be " + temp + " with an average temperature of " + (int)this.getTemperature() + "°C.  It will also be " + rain + " with a " + wind + ".";
 	}
 }

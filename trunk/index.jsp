@@ -9,9 +9,8 @@
 		</div>
 		<div class="menu">
 			<a class="button" href="./index.jsp">Home</a>
-			<a class="button" href="about.html">Current Readings</a>
+			<a class="button" href="about.html">Readings</a>
 			<a class="button" href="./getForecast">Forecast</a>
-			<a class="button" href="contact.html">Subscribe</a>
 		</div>
 		<div class="bl">
 			<div class="br">
@@ -20,32 +19,8 @@
 						<table cellpadding="15">
 							<tr>
 								<td>
-									<h3>Today</h3>
-									<p class="main_text">
-	<%
-		ie.tippinst.jod.ws.model.Weather weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("overnightWeather");
-		out.println("Overnight: ");
-		out.println(weather);
-	%>
-	<br />
-	<%
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("morningWeather");
-		out.println("Morning: ");
-		out.println(weather);
-	%>
-	<br />
-	<%
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
-		out.println("Afternoon: ");
-		out.println(weather);
-	%>
-	<br />
-	<%
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("eveningWeather");
-		out.println("Evening: ");
-		out.println(weather);
-	%>
-	<br /></p>
+									<h3>Weather Site</h3>
+									<p class="main_text">Welcome to the weather site.  On this site you can see a weather forecast for the upcoming days and you can also see what the current weather readings are by connecting to the local weather station.</p>
 								</td>
 								<td>
 									<img src="images/8615314-sun.jpg" alt="A screenshot" width="350" height="200" />
@@ -57,9 +32,9 @@
 			</div>
 		</div>
 		<div class="bottom_links">
-			<a class="bottom" href="home.html">Home</a>
-			<a class="bottom" href="about.html">About</a>
-			<a class="bottom" href="contact.html">Contact</a>
+			<a class="bottom" href="./index.jsp">Home</a>
+			<a class="bottom" href="about.html">Readings</a>
+			<a class="bottom" href="./getForecast">Forecast</a>
 		</div>
 		<div class="bottom_message">
 			<p class="bottom">Weather Forecasting by Joseph O'Donoghue</p>

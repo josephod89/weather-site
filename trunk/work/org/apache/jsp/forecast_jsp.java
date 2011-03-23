@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import ie.tippinst.jod.ws.model.Weather;
+import java.util.Calendar;
 
 public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -42,6 +44,8 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\r\n");
       out.write("\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<html>\r\n");
       out.write("\t<head>\r\n");
       out.write("\t\t<title>Weather Site</title>\r\n");
@@ -53,9 +57,8 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"menu\">\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./index.jsp\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"button\" href=\"about.html\">Current Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"about.html\">Readings</a>\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./getForecast\">Forecast</a>\r\n");
-      out.write("\t\t\t<a class=\"button\" href=\"contact.html\">Subscribe</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bl\">\r\n");
       out.write("\t\t\t<div class=\"br\">\r\n");
@@ -66,38 +69,27 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t<td>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<h3>Today</h3>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<p class=\"main_text\">\r\n");
-      out.write("\t");
+      out.write("\t\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t");
 
-		ie.tippinst.jod.ws.model.Weather weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("overnightWeather");
-		out.println("Overnight: ");
-		out.println(weather);
-	
+											Weather weather = (Weather) session.getAttribute("overnightWeather");
+											out.println("Overnight, i" + weather);
+										
+										
+											weather = (Weather) session.getAttribute("morningWeather");
+											out.println("In the morning i" + weather);
+										
+										
+											weather = (Weather) session.getAttribute("afternoonWeather");
+											out.println("In the afternoon i" + weather);
+										
+										
+											weather = (Weather) session.getAttribute("eveningWeather");
+											out.println("In the evening i" + weather);
+										
       out.write("\r\n");
-      out.write("\t<br />\r\n");
-      out.write("\t");
-
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("morningWeather");
-		out.println("Morning: ");
-		out.println(weather);
-	
-      out.write("\r\n");
-      out.write("\t<br />\r\n");
-      out.write("\t");
-
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
-		out.println("Afternoon: ");
-		out.println(weather);
-	
-      out.write("\r\n");
-      out.write("\t<br />\r\n");
-      out.write("\t");
-
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("eveningWeather");
-		out.println("Evening: ");
-		out.println(weather);
-	
-      out.write("\r\n");
-      out.write("\t<br /></p>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t</p>\r\n");
       out.write("\t\t\t\t\t\t\t\t</td>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<img src=\"images/8615314-sun.jpg\" alt=\"A screenshot\" width=\"350\" height=\"200\" />\r\n");
@@ -120,8 +112,8 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<p class=\"main_text\">\r\n");
       out.write("\t\t\t\t\t\t");
  
-							weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
-							out.println(weather);
+							weather = (Weather) session.getAttribute("day2");
+							out.println("I" + weather);
 						
       out.write("\r\n");
       out.write("\t\t\t\t\t</p>\r\n");
@@ -133,7 +125,15 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<table cellspacing=\"10\">\r\n");
       out.write("\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t<td>\r\n");
-      out.write("\t\t\t\t\t\t<h3>Tuesday</h3>\r\n");
+      out.write("\t\t\t\t\t\t<h3>");
+ 
+							weather = (Weather) session.getAttribute("day3");
+							String [] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+							Calendar cal = Calendar.getInstance();
+							cal.setTime(weather.getDate());
+							out.println(days[cal.get(Calendar.DAY_OF_WEEK) - 1]);
+						
+      out.write("</h3>\r\n");
       out.write("\t\t\t\t\t</td>\r\n");
       out.write("\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t<tr>\r\n");
@@ -141,8 +141,7 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<p class=\"main_text\">\r\n");
       out.write("\t\t\t\t\t\t");
  
-							weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
-							out.println(weather);
+							out.println("I" + weather);
 						
       out.write("</p>\r\n");
       out.write("\t\t\t\t\t</td>\r\n");
@@ -153,15 +152,21 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<table cellspacing=\"10\">\r\n");
       out.write("\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t<td>\r\n");
-      out.write("\t\t\t\t\t\t<h3>Wednesday</h3>\r\n");
+      out.write("\t\t\t\t\t\t<h3>");
+
+							weather = (Weather) session.getAttribute("day4");
+							cal.setTime(weather.getDate());
+							out.println(days[cal.get(Calendar.DAY_OF_WEEK) - 1]);
+							
+      out.write("\r\n");
+      out.write("\t\t\t\t\t\t</h3>\r\n");
       out.write("\t\t\t\t\t</td>\r\n");
       out.write("\t\t\t\t</tr>\r\n");
       out.write("\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t<td>\r\n");
       out.write("\t\t\t\t\t\t<p class=\"main_text\">");
  
-							weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
-							out.println(weather);
+							out.println("I" + weather);
 						
       out.write("</p>\r\n");
       out.write("\t\t\t\t\t</td>\r\n");
@@ -169,9 +174,9 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</table>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_links\">\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"home.html\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"about.html\">About</a>\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"contact.html\">Contact</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"./index.jsp\">Home</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"about.html\">Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"./getForecast\">Forecast</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_message\">\r\n");
       out.write("\t\t\t<p class=\"bottom\">Weather Forecasting by Joseph O'Donoghue</p>\r\n");

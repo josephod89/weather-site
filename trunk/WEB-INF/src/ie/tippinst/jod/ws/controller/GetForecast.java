@@ -20,6 +20,9 @@ public class GetForecast extends HttpServlet {
 	Weather morningWeather;
 	Weather afternoonWeather;
 	Weather eveningWeather;
+	Weather day2;
+	Weather day3;
+	Weather day4;
 	
 	public void init(){
 		wfg = new WeatherForecastGenerator();
@@ -33,12 +36,18 @@ public class GetForecast extends HttpServlet {
 		morningWeather = wfg.getForecast(1);
 		afternoonWeather = wfg.getForecast(2);
 		eveningWeather = wfg.getForecast(3);
+		day2 = wfg.getForecast(4);
+		day3 = wfg.getForecast(5);
+		day4 = wfg.getForecast(6);
 		//add weather object to session
 		HttpSession session = request.getSession();
 		session.setAttribute("overnightWeather", overnightWeather);
 		session.setAttribute("morningWeather", morningWeather);
 		session.setAttribute("afternoonWeather", afternoonWeather);
 		session.setAttribute("eveningWeather", eveningWeather);
+		session.setAttribute("day2", day2);
+		session.setAttribute("day3", day3);
+		session.setAttribute("day4", day4);
 		response.sendRedirect("./forecast.jsp");
 	}
 

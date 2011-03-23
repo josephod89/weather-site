@@ -50,9 +50,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"menu\">\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./index.jsp\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"button\" href=\"about.html\">Current Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"about.html\">Readings</a>\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./getForecast\">Forecast</a>\r\n");
-      out.write("\t\t\t<a class=\"button\" href=\"contact.html\">Subscribe</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bl\">\r\n");
       out.write("\t\t\t<div class=\"br\">\r\n");
@@ -61,40 +60,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<table cellpadding=\"15\">\r\n");
       out.write("\t\t\t\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t<h3>Today</h3>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t<p class=\"main_text\">\r\n");
-      out.write("\t");
-
-		ie.tippinst.jod.ws.model.Weather weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("overnightWeather");
-		out.println("Overnight: ");
-		out.println(weather);
-	
-      out.write("\r\n");
-      out.write("\t<br />\r\n");
-      out.write("\t");
-
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("morningWeather");
-		out.println("Morning: ");
-		out.println(weather);
-	
-      out.write("\r\n");
-      out.write("\t<br />\r\n");
-      out.write("\t");
-
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("afternoonWeather");
-		out.println("Afternoon: ");
-		out.println(weather);
-	
-      out.write("\r\n");
-      out.write("\t<br />\r\n");
-      out.write("\t");
-
-		weather = (ie.tippinst.jod.ws.model.Weather) session.getAttribute("eveningWeather");
-		out.println("Evening: ");
-		out.println(weather);
-	
-      out.write("\r\n");
-      out.write("\t<br /></p>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<h3>Weather Site</h3>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<p class=\"main_text\">Welcome to the weather site.  On this site you can see a weather forecast for the upcoming days and you can also see what the current weather readings are by connecting to the local weather station.</p>\r\n");
       out.write("\t\t\t\t\t\t\t\t</td>\r\n");
       out.write("\t\t\t\t\t\t\t\t<td>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<img src=\"images/8615314-sun.jpg\" alt=\"A screenshot\" width=\"350\" height=\"200\" />\r\n");
@@ -106,9 +73,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_links\">\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"home.html\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"about.html\">About</a>\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"contact.html\">Contact</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"./index.jsp\">Home</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"about.html\">Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"./getForecast\">Forecast</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_message\">\r\n");
       out.write("\t\t\t<p class=\"bottom\">Weather Forecasting by Joseph O'Donoghue</p>\r\n");
