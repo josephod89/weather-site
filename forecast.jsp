@@ -5,7 +5,7 @@
 <%@page import="java.util.Calendar"%>
 <html>
 	<head>
-		<title>Weather Site</title>
+		<title>Weather Site - Forecast</title>
 		<link rel="stylesheet" type="text/css" href="design.css" />
 	</head>
 	<body>
@@ -14,7 +14,7 @@
 		</div>
 		<div class="menu">
 			<a class="button" href="./index.jsp">Home</a>
-			<a class="button" href="about.html">Readings</a>
+			<a class="button" href="./readings.jsp">Readings</a>
 			<a class="button" href="./getForecast">Forecast</a>
 		</div>
 		<div class="bl">
@@ -120,7 +120,7 @@
 		</div>
 		<div class="bottom_links">
 			<a class="bottom" href="./index.jsp">Home</a>
-			<a class="bottom" href="about.html">Readings</a>
+			<a class="bottom" href="./readings.jsp">Readings</a>
 			<a class="bottom" href="./getForecast">Forecast</a>
 		</div>
 		<div class="bottom_message">

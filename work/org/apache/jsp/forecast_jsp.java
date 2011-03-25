@@ -48,7 +48,7 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("\t<head>\r\n");
-      out.write("\t\t<title>Weather Site</title>\r\n");
+      out.write("\t\t<title>Weather Site - Forecast</title>\r\n");
       out.write("\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"design.css\" />\r\n");
       out.write("\t</head>\r\n");
       out.write("\t<body>\r\n");
@@ -57,7 +57,7 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"menu\">\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./index.jsp\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"button\" href=\"about.html\">Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"./readings.jsp\">Readings</a>\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./getForecast\">Forecast</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bl\">\r\n");
@@ -175,7 +175,7 @@ public final class forecast_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_links\">\r\n");
       out.write("\t\t\t<a class=\"bottom\" href=\"./index.jsp\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"about.html\">Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"./readings.jsp\">Readings</a>\r\n");
       out.write("\t\t\t<a class=\"bottom\" href=\"./getForecast\">Forecast</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_message\">\r\n");
