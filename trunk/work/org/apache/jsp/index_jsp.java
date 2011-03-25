@@ -50,7 +50,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"menu\">\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./index.jsp\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"button\" href=\"about.html\">Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"button\" href=\"./readings.jsp\">Readings</a>\r\n");
       out.write("\t\t\t<a class=\"button\" href=\"./getForecast\">Forecast</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bl\">\r\n");
@@ -74,7 +74,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_links\">\r\n");
       out.write("\t\t\t<a class=\"bottom\" href=\"./index.jsp\">Home</a>\r\n");
-      out.write("\t\t\t<a class=\"bottom\" href=\"about.html\">Readings</a>\r\n");
+      out.write("\t\t\t<a class=\"bottom\" href=\"./readings.jsp\">Readings</a>\r\n");
       out.write("\t\t\t<a class=\"bottom\" href=\"./getForecast\">Forecast</a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div class=\"bottom_message\">\r\n");

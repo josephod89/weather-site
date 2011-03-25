@@ -7,5 +7,14 @@
 	<classpathentry kind="src" path="WEB-INF/src"/>
 	<classpathentry kind="src" output="work" path="work"/>
 	<classpathentry kind="lib" path="C:/jexcelapi/jxl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/batik-awt-util-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/batik-dom-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/batik-svggen-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/batik-util-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/batik-xml-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/jcommon-1.0.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/cewolf-1.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Joseph/Documents/cewolf-1.1.5/lib/jfreechart-1.0.12.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>
