@@ -1,0 +1,1 @@
+This is a website where weather predictions will be made based on data that I have collected.
